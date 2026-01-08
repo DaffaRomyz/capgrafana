@@ -10,5 +10,6 @@
   "sapux": [
     "app/capgrafana_authors",
     "app/capgrafana_books"
-  ]
+  ],
+  "dependencies": {}
 }
