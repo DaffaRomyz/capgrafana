@@ -11,9 +11,13 @@
       <encoder class="com.sap.hcp.cf.logback.encoder.JsonEncoder" />
    </appender>
 
+   <appender name="OpenTelemetry"
+      class="io.opentelemetry.instrumentation.logback.appender.v1_0.OpenTelemetryAppender">
+   </appender>
+
    <logger name="customer.caplogback.parent" level="INFO" />
    <logger name="customer.caplogback.parent.child" level="WARN" />
    <root level="INFO">
-      <appender-ref ref="STDOUT" />
+      <appender-ref ref="OpenTelemetry" />
    </root>
 </configuration>
