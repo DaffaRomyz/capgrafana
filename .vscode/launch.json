@@ -13,7 +13,14 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "customer.capgrafana.Application",
             "projectName": "capgrafana",
-            "preLaunchTask": "cds_bind"
+            "preLaunchTask": "cds_bind",
+            "env": {
+                "JAVA_TOOL_OPTIONS" :  "-javaagent:srv\\src\\main\\resources\\opentelemetry-javaagent.jar",
+                "OTEL_SERVICE_NAME" : "otel-service",
+                "OTEL_TRACES_EXPORTER" : "console",
+                "OTEL_METRICS_EXPORTER" : "console",
+                "OTEL_LOGS_EXPORTER" : "console"
+            }
         },
         {
             "name": "Launch Approuter",
