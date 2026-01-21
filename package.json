@@ -5,7 +5,9 @@
   "license": "ISC",
   "repository": "<Add your repository here>",
   "devDependencies": {
-    "@sap/cds-dk": "^9.5.0"
+    "@sap/cds-dk": "^9.5.0",
+    "rimraf": "^5.0.5",
+    "mbt": "^1.2.29"
   },
   "sapux": [
     "app/capgrafana_authors",
@@ -16,5 +18,10 @@
     "requires": {
       "workzone": true
     }
+  },
+  "scripts": {
+    "undeploy": "cf undeploy capgrafana --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
   }
 }
