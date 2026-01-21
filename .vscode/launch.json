@@ -15,11 +15,14 @@
             "projectName": "capgrafana",
             "preLaunchTask": "cds_bind",
             "env": {
-                "JAVA_TOOL_OPTIONS" :  "-javaagent:srv\\src\\main\\resources\\opentelemetry-javaagent.jar",
+                "JAVA_TOOL_OPTIONS" :  "-javaagent:srv\\src\\main\\resources\\grafana-opentelemetry-java.jar",
                 "OTEL_SERVICE_NAME" : "otel-service",
-                "OTEL_TRACES_EXPORTER" : "console",
-                "OTEL_METRICS_EXPORTER" : "console",
-                "OTEL_LOGS_EXPORTER" : "console"
+                "OTEL_TRACES_EXPORTER" : "otlp",
+                "OTEL_METRICS_EXPORTER" : "otlp",
+                "OTEL_LOGS_EXPORTER" : "otlp",
+                "OTEL_EXPORTER_OTLP_ENDPOINT" : "",
+                // "OTEL_EXPORTER_OTLP_HEADERS" : "",
+                "OTEL_EXPORTER_OTLP_PROTOCOL" : "http/protobuf",
             }
         },
         {
