@@ -32,3 +32,4 @@ hs_err*
 
 # added by cds
 .cdsrc-private.json
+app/router/default-services.json
